@@ -1,14 +1,15 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Gift as GiftIcon } from 'lucide-react';
+import { assetUrl } from '../utils/assetUrl';
 
 const Gift = ({ onComplete }) => {
     const [openedGifts, setOpenedGifts] = useState([]);
 
     const gifts = [
-        { id: 1, label: 'Lagi capek ngejar deadline BPH? 🔋', src: '/assets/coupons/coupon1.png', alt: 'Kupon Energi (Kopi)' },
-        { id: 2, label: 'Lagi pusing & kebanyakan mikir? 🌧️', src: '/assets/coupons/coupon2.png', alt: 'Kupon Peluk Hangat' },
-        { id: 3, label: 'Butuh jeda biar waras dikit? 🎬', src: '/assets/coupons/coupon3.png', alt: 'Kupon Waktu Santai' },
+        { id: 1, label: 'Lagi capek ngejar deadline BPH? 🔋', src: assetUrl('assets/coupons/coupon1.png'), alt: 'Kupon Energi (Kopi)' },
+        { id: 2, label: 'Lagi pusing & kebanyakan mikir? 🌧️', src: assetUrl('assets/coupons/coupon2.png'), alt: 'Kupon Peluk Hangat' },
+        { id: 3, label: 'Butuh jeda biar waras dikit? 🎬', src: assetUrl('assets/coupons/coupon3.png'), alt: 'Kupon Waktu Santai' },
     ];
 
     const handleOpen = (id) => {

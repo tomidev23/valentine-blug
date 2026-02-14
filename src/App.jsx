@@ -9,6 +9,7 @@ import Proposal from './components/Proposal';
 import Gallery from './components/Gallery';
 import Letter from './components/Letter';
 import Closing from './components/Closing';
+import { assetUrl } from './utils/assetUrl';
 
 function App() {
   const [stage, setStage] = useState('intro'); // intro, game, proposal, letter, gallery, gift
@@ -59,7 +60,7 @@ function App() {
               <h1 className="text-5xl md:text-7xl font-bold text-pink-600 mb-6 font-custom drop-shadow-sm">
                 For You ❤️
               </h1>
-              <img src="/public/assets/blug/BLUG.png" alt="blug" className="w-48 h-48 object-contain mx-auto mb-6" />
+              <img src={assetUrl('assets/blug/blug.png')} alt="blug" className="w-48 h-48 object-contain mx-auto mb-6" />
               <p className="text-xl text-gray-600 mb-8 max-w-md mx-auto">
                 I have a little surprise for you. Are you ready?
               </p>

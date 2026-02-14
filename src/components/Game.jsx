@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Play } from 'lucide-react';
+import { assetUrl } from '../utils/assetUrl';
 
 const Game = ({ onComplete }) => {
     const [gameState, setGameState] = useState('idle'); // idle, moving, dropping, rising, won, lost
@@ -171,7 +172,7 @@ const Game = ({ onComplete }) => {
                             {gameState === 'caught' && caughtItem && (
                                 <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-0">
                                     <img
-                                        src={`/assets/game/${caughtItem.type}.png`}
+                                        src={assetUrl(`assets/game/${caughtItem.type}.png`)}
                                         alt="item"
                                         className="w-10 h-10 object-contain drop-shadow-lg animate-bounce"
                                         onError={(e) => {
@@ -214,7 +215,7 @@ const Game = ({ onComplete }) => {
                                 }}
                             >
                                 <img
-                                    src={`/assets/game/${item.type}.png`}
+                                    src={assetUrl(`assets/game/${item.type}.png`)}
                                     alt={item.type}
                                     className={`object-contain drop-shadow-md bg-white/50 backdrop-blur-sm rounded-full p-1 ${item.type === 'prize' ? 'w-16 h-16' : 'w-12 h-12 opacity-90'}`}
                                     onError={(e) => {

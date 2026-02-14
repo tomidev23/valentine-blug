@@ -1,5 +1,6 @@
 import { useEffect } from 'react'; // Added import
 import { motion } from 'framer-motion';
+import { assetUrl } from '../utils/assetUrl';
 
 const Gallery = ({ onOpenGift }) => {
     // Scroll to top on mount
@@ -9,10 +10,10 @@ const Gallery = ({ onOpenGift }) => {
 
     // Dummy data. User should add their photos to public/assets/photos and update this list.
     const photos = [
-        { id: 1, src: '/public/assets/photos/dummy1.jpg', caption: 'Awal Kader: Hari Pertama' },
-        { id: 2, src: '/public/assets/photos/dummy2.jpg', caption: 'Proses Kader: Belajar & Bertumbuh' },
-        { id: 3, src: '/public/assets/photos/dummy3.jpg', caption: 'Momen Kebersamaan: Satu Perjuangan' },
-        { id: 4, src: '/public/assets/photos/dummy4.jpg', caption: 'Akhirnya BPH: Kamu Hebat' },
+        { id: 1, src: assetUrl('assets/photos/dummy1.jpg'), caption: 'Awal Kader: Hari Pertama' },
+        { id: 2, src: assetUrl('assets/photos/dummy2.jpg'), caption: 'Proses Kader: Belajar & Bertumbuh' },
+        { id: 3, src: assetUrl('assets/photos/dummy3.jpg'), caption: 'Momen Kebersamaan: Satu Perjuangan' },
+        { id: 4, src: assetUrl('assets/photos/dummy4.jpg'), caption: 'Akhirnya BPH: Kamu Hebat' },
     ];
 
     return (

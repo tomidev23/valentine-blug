@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { HeartCrack, Heart } from 'lucide-react';
+import { assetUrl } from '../utils/assetUrl';
 import confetti from 'canvas-confetti';
 
 const Proposal = ({ onAccept }) => {
@@ -43,15 +44,15 @@ const Proposal = ({ onAccept }) => {
 
             <div className="my-6 md:my-8 relative z-10 group">
                 <div className="absolute inset-0 bg-pink-200 rounded-full blur-xl opacity-50 group-hover:opacity-75 transition-opacity"></div>
-                <img
-                    src="/assets/proposal.png"
+                    <motion.img
+                        src={assetUrl('assets/proposal.png')}
                     alt="Me holding flowers for you"
                     className="w-60 h-60 md:w-72 md:h-72 object-cover rounded-3xl shadow-xl border-4 border-white transform rotate-[-2deg] hover:rotate-[2deg] transition-transform duration-500"
                     onError={(e) => {
                         e.target.style.display = 'none';
                         e.target.parentElement.innerHTML = '<div class="text-8xl md:text-9xl animate-pulse">💐🥺</div>';
                     }}
-                />
+                    />
             </div>
 
             <div className="flex flex-col md:flex-row gap-5 md:gap-8 items-center w-full justify-center min-h-[100px] z-10">

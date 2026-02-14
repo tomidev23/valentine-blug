@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles } from 'lucide-react';
+import { assetUrl } from '../utils/assetUrl';
 
 const Closing = () => {
     const [imageLoaded, setImageLoaded] = useState(false);
@@ -28,7 +29,7 @@ const Closing = () => {
                     </div>
                     {/* Placeholder content - User will replace src */}
                     <img
-                        src="/assets/closing.png"
+                        src={assetUrl('assets/closing.png')}
                         alt="Us"
                         className={`w-full h-full object-cover relative z-10 transition-opacity duration-1000 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
                         onLoad={() => setImageLoaded(true)}

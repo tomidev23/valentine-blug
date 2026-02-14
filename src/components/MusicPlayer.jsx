@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
-import { Music, Pause, Play } from 'lucide-react';
+import { Music, Pause } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { assetUrl } from '../utils/assetUrl';
 
 const MusicPlayer = ({ startPlaying }) => {
     const [isPlaying, setIsPlaying] = useState(false);
@@ -8,7 +9,7 @@ const MusicPlayer = ({ startPlaying }) => {
 
     // NOTE: User can replace this with their own music file in public/assets/music/bgm.mp3
     // If file doesn't exist, it will just fail silently or show error in console
-    const musicSrc = "/assets/music/bgm.mp3";
+    const musicSrc = assetUrl('assets/music/bgm.mp3');
 
     useEffect(() => {
         if (startPlaying && audioRef.current) {
